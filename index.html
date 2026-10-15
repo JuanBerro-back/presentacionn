@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inteligencia Artificial Generativa: clase interactiva</title>
+  <meta name="description" content="Clase interactiva para principiantes sobre inteligencia artificial generativa: conceptos, aplicaciones, herramientas, riesgos, un ejercicio práctico de 60 minutos y un cuestionario.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <h1 class="sr-only">Inteligencia Artificial Generativa: clase interactiva</h1>
+
+  <div class="app">
+    <nav class="sidebar on-dark" id="menu" aria-label="Secciones de la clase">
+      <p class="brand">Inteligencia Artificial Generativa</p>
+      <ol id="nav" class="nav-list">
+        <li><a href="#s1"><span class="num">1</span><span class="label">Introducción</span><span class="visit"></span></a></li>
+        <li><a href="#s2"><span class="num">2</span><span class="label">¿Qué es la IA generativa?</span><span class="visit"></span></a></li>
+        <li><a href="#s3"><span class="num">3</span><span class="label">Características principales</span><span class="visit"></span></a></li>
+        <li><a href="#s4"><span class="num">4</span><span class="label">Aplicaciones</span><span class="visit"></span></a></li>
+        <li><a href="#s5"><span class="num">5</span><span class="label">Herramientas</span><span class="visit"></span></a></li>
+        <li><a href="#s6"><span class="num">6</span><span class="label">Riesgos y uso responsable</span><span class="visit"></span></a></li>
+        <li><a href="#s7"><span class="num">7</span><span class="label">Ejercicio práctico</span><span class="visit"></span></a></li>
+        <li><a href="#s8"><span class="num">8</span><span class="label">Evaluación</span><span class="visit"></span></a></li>
+        <li><a href="#s9"><span class="num">9</span><span class="label">Cierre</span><span class="visit"></span></a></li>
+      </ol>
+    </nav>
+
+    <div class="col">
+      <header class="topbar">
+        <button type="button" class="btn btn-secondary menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">Secciones</button>
+        <div class="progress">
+          <label id="prog-label" for="prog">Progreso: 1 de 9 secciones vistas</label>
+          <progress id="prog" max="9" value="1"></progress>
+        </div>
+      </header>
+
+      <main id="contenido">
+        <noscript>
+          <p class="notice">Esta clase usa JavaScript para la navegación, el cuestionario y las actividades interactivas. Con JavaScript desactivado puedes leer todo el contenido, pero las actividades interactivas no funcionarán.</p>
+        </noscript>
+
+        <!-- ========== 1. INTRODUCCIÓN ========== -->
+        <section id="s1" class="panel">
+          <div class="hero on-dark">
+            <p class="hero-kicker">Clase interactiva para principiantes</p>
+            <h2 id="h-s1" tabindex="-1">Inteligencia Artificial Generativa</h2>
+            <p class="hero-lead">Aprende qué es, para qué sirve y cómo usarla con criterio, desde cero y sin conocimientos técnicos.</p>
+            <figure class="demo">
+              <div class="bubble">
+                <span class="bubble-who">Tú escribes</span>
+                <p>Escribe un cuento corto sobre un viaje en el tiempo.</p>
+              </div>
+              <span class="demo-arrow" aria-hidden="true"></span>
+              <div class="bubble out">
+                <span class="bubble-who">La IA genera</span>
+                <p>En el año 3024, un historiador descubre una carta que lo lleva a viajar al pasado…</p>
+              </div>
+              <figcaption>Ejemplo de la presentación: una instrucción en lenguaje natural produce un texto nuevo.</figcaption>
+            </figure>
+            <a class="btn btn-primary" href="#s2" id="start-btn">Comenzar la clase</a>
+          </div>
+
+          <div class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> ¿Por qué importa conocer esta tecnología?</h3>
+            <p>Cada vez más herramientas cotidianas incluyen funciones que escriben, dibujan, resumen o programan por ti. Saber cómo funcionan te ayuda a aprovecharlas, y también a darte cuenta de cuándo un resultado no es confiable.</p>
+            <p>La IA generativa puede producir textos, imágenes, sonidos, videos y código que parecen hechos por una persona. Esa es su ventaja y también su riesgo: un resultado convincente no siempre es correcto, justo ni propio. Por eso esta clase combina tres cosas: entender, practicar y revisar con ojo crítico.</p>
+          </div>
+
+          <h3>Al terminar, podrás</h3>
+          <ol class="objectives">
+            <li>Explicar con tus propias palabras qué es la IA generativa.</li>
+            <li>Reconocer sus cuatro características principales.</li>
+            <li>Identificar aplicaciones en distintos sectores.</li>
+            <li>Elegir una herramienta según la tarea que necesitas hacer.</li>
+            <li>Redactar instrucciones claras para obtener resultados útiles.</li>
+            <li>Detectar posibles errores, sesgos y riesgos en los resultados.</li>
+            <li>Usar la IA de manera crítica, responsable y consciente.</li>
+          </ol>
+
+          <h3>Tiempo estimado</h3>
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">Estimación de tiempo por parte de la clase</caption>
+              <thead><tr><th scope="col">Parte</th><th scope="col">Tiempo</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Lección (secciones 2 a 6, con preguntas rápidas)</th><td>40 minutos</td></tr>
+                <tr><th scope="row">Ejercicio práctico guiado (sección 7)</th><td>60 minutos</td></tr>
+                <tr><th scope="row">Evaluación (sección 8)</th><td>10 minutos</td></tr>
+                <tr><th scope="row">Cierre (sección 9)</th><td>5 minutos</td></tr>
+                <tr class="total"><th scope="row">Total aproximado</th><td>1 hora 55 minutos</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="muted">Puedes dividirla en dos sesiones: lección y evaluación en la primera; ejercicio y cierre en la segunda.</p>
+
+          <div class="block example">
+            <h3><span class="chip chip-example">Guía</span> Cómo leer esta página</h3>
+            <p>Cada bloque tiene una etiqueta que indica su tipo:</p>
+            <ul>
+              <li><span class="chip chip-theory">Teoría</span> explica un concepto.</li>
+              <li><span class="chip chip-example">Ejemplo</span> lo muestra con una situación concreta.</li>
+              <li><span class="chip chip-activity">Actividad</span> te pide hacer algo.</li>
+              <li><span class="chip chip-eval">Evaluación</span> comprueba lo que entendiste.</li>
+            </ul>
+            <p>También verás de dónde viene el contenido:</p>
+            <ul>
+              <li><span class="src src-pdf">Presentación</span> es contenido de la presentación «IA Generativa».</li>
+              <li><span class="src src-ext">Ampliación</span> es una explicación o un ejemplo añadido para esta clase, que no está en la presentación.</li>
+            </ul>
+            <p class="muted">Contenido base: presentación «IA Generativa» de Juan David Berrotéran, Kamilo Avendaño, Miguel Sarmiento, Daniel Motta y Keiner Quintana.</p>
+          </div>
+        </section>
+
+        <!-- ========== 2. ¿QUÉ ES LA IA GENERATIVA? ========== -->
+        <section id="s2" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 2 de 9</p>
+            <h2 id="h-s2" tabindex="-1">¿Qué es la IA generativa?</h2>
+          </header>
+
+          <div class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> La definición <span class="src src-pdf">Presentación</span></h3>
+            <blockquote>
+              <p>La inteligencia artificial generativa es capaz de crear contenido <strong>nuevo y original</strong> a partir de datos existentes.</p>
+              <p>A diferencia de los modelos tradicionales que se centran en clasificar o predecir, los modelos generativos <strong>imitan patrones complejos</strong> para producir textos, imágenes, sonidos, videos, código y otros formatos.</p>
+            </blockquote>
+          </div>
+
+          <div class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> En palabras sencillas <span class="src src-ext">Ampliación</span></h3>
+            <p>Imagina a alguien que lee miles de recetas. Con el tiempo reconoce cómo suelen combinarse los ingredientes y cómo se escriben los pasos. Si le pides una receta nueva, puede inventar una que sigue esas costumbres, aunque no la haya leído antes. La IA generativa funciona de forma parecida.</p>
+            <dl class="terms">
+              <dt>Datos</dt><dd>Los ejemplos con los que se entrena un modelo: textos, imágenes, audios, código.</dd>
+              <dt>Modelo</dt><dd>El programa que aprendió de esos datos y que luego produce resultados.</dd>
+              <dt>Patrón</dt><dd>Una regularidad que se repite, como el orden en que suelen aparecer las palabras en una frase.</dd>
+            </dl>
+            <p><strong>Por qué importa:</strong> el resultado puede parecer hecho por una persona, pero nace de patrones. El modelo no verifica por sí mismo que lo que dice sea cierto. Por eso es útil, pero hay que revisarlo.</p>
+          </div>
+
+          <h3>Qué puede generar</h3>
+          <ul class="chips-grid">
+            <li><strong>Texto</strong> Un resumen de una reunión.</li>
+            <li><strong>Imágenes</strong> Una ilustración para un afiche.</li>
+            <li><strong>Sonidos</strong> Una melodía de fondo.</li>
+            <li><strong>Videos</strong> Un clip corto desde una descripción.</li>
+            <li><strong>Código</strong> Una función que valida un formulario.</li>
+            <li><strong>Otros formatos</strong> Tablas, guiones, esquemas.</li>
+          </ul>
+          <p class="muted">Los formatos son los de la presentación; los ejemplos son una ampliación didáctica.</p>
+
+          <div class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Clasificar o generar <span class="src src-pdf">Presentación</span> <span class="src src-ext">Ampliación</span></h3>
+            <div class="table-wrap">
+              <table>
+                <caption class="sr-only">Comparación entre un sistema que clasifica o predice y uno que genera</caption>
+                <thead>
+                  <tr><th scope="col">Aspecto</th><th scope="col">Clasifica o predice (modelo tradicional)</th><th scope="col">Genera (modelo generativo)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Pregunta que responde</th><td>¿A qué categoría pertenece esto? ¿Qué es probable que pase?</td><td>¿Cómo sería algo nuevo que cumpla esta petición?</td></tr>
+                  <tr><th scope="row">Entrada</th><td>Un correo recibido.</td><td>Una instrucción: «Redacta una respuesta amable a este correo».</td></tr>
+                  <tr><th scope="row">Salida</th><td>Una etiqueta: «spam» o «no spam».</td><td>Un texto nuevo: el borrador de la respuesta.</td></tr>
+                  <tr><th scope="row">Otro ejemplo</th><td>Estimar si lloverá mañana.</td><td>Escribir un poema sobre la lluvia.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="block example">
+            <h3><span class="chip chip-example">Ejemplo</span> El cartero y la escritora <span class="src src-ext">Ampliación</span></h3>
+            <p>Un cartero ordena las cartas por barrio: no escribe ninguna, solo coloca cada una donde corresponde. Eso es <strong>clasificar</strong>.</p>
+            <p>Una escritora que leyó miles de cartas puede redactar una carta nueva con el tono que le pidas. Eso es <strong>generar</strong>.</p>
+            <p><strong>Por qué importa:</strong> si esperas que un generador «consulte la verdad», te llevarás una sorpresa. Produce algo plausible, y plausible no siempre es verdadero.</p>
+          </div>
+
+          <div class="block eval">
+            <h3><span class="chip chip-eval">Evaluación</span> Comprueba lo que entendiste</h3>
+            <div class="quick" data-quick="q-clasifica"></div>
+          </div>
+        </section>
+
+        <!-- ========== 3. CARACTERÍSTICAS ========== -->
+        <section id="s3" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 3 de 9</p>
+            <h2 id="h-s3" tabindex="-1">Características principales</h2>
+            <p class="lead">La presentación identifica cuatro características. Para cada una verás qué es, cómo se explica sin tecnicismos, un ejemplo y una pregunta para comprobar.</p>
+          </header>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> 1. Creatividad algorítmica</h3>
+            <dl class="char-dl">
+              <dt>Definición <span class="src src-pdf">Presentación</span></dt>
+              <dd>Utiliza modelos entrenados con grandes volúmenes de datos para generar contenido que simula la creatividad humana.</dd>
+              <dt>Explicación sencilla <span class="src src-ext">Ampliación</span></dt>
+              <dd>Un algoritmo es una serie de pasos o reglas matemáticas. «Simula» quiere decir que el resultado parece creativo porque combina patrones aprendidos, no porque la IA tenga intención, emociones o experiencia propia.</dd>
+              <dt>Ejemplo práctico <span class="src src-ext">Ampliación</span></dt>
+              <dd>Pides cinco nombres para una cafetería de barrio y recibes opciones que suenan originales.</dd>
+              <dt>Aplicación cotidiana <span class="src src-ext">Ampliación</span></dt>
+              <dd>Una lluvia de ideas para el nombre de un equipo o para un mensaje de cumpleaños.</dd>
+            </dl>
+            <div class="quick" data-quick="q-creatividad"></div>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> 2. Aprendizaje profundo</h3>
+            <dl class="char-dl">
+              <dt>Definición <span class="src src-pdf">Presentación</span></dt>
+              <dd>Se basa en redes neuronales profundas, especialmente en arquitecturas como los transformers, que permiten entender contextos complejos.</dd>
+              <dt>Explicación sencilla <span class="src src-ext">Ampliación</span></dt>
+              <dd>Una red neuronal es un programa formado por muchas capas de operaciones matemáticas conectadas, inspirado de forma muy general en el cerebro. «Profunda» significa que tiene muchas capas. Los transformers ayudan al modelo a relacionar las partes de un texto entre sí. Aquí «entender el contexto» significa manejar esas relaciones, no comprender como lo haría una persona.</dd>
+              <dt>Ejemplo práctico <span class="src src-ext">Ampliación</span></dt>
+              <dd>En «Me senté en el banco del parque» y «El banco cerró a las cinco», el contexto decide qué significa «banco».</dd>
+              <dt>Aplicación cotidiana <span class="src src-ext">Ampliación</span></dt>
+              <dd>Una traducción automática que respeta el sentido de la frase completa y no solo palabra por palabra.</dd>
+            </dl>
+            <div class="quick" data-quick="q-profundo"></div>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> 3. Interacción mediante lenguaje natural</h3>
+            <dl class="char-dl">
+              <dt>Definición <span class="src src-pdf">Presentación</span></dt>
+              <dd>Acepta instrucciones en lenguaje humano, facilitando su uso por personas sin conocimientos técnicos.</dd>
+              <dt>Explicación sencilla <span class="src src-ext">Ampliación</span></dt>
+              <dd>Escribes como hablas. A esa instrucción se le llama <em>prompt</em>. Aunque no necesites saber programar, la claridad importa: instrucciones vagas producen resultados vagos.</dd>
+              <dt>Ejemplo práctico <span class="src src-pdf">Presentación</span></dt>
+              <dd>«Escribe un cuento corto sobre un viaje en el tiempo» produce un cuento que empieza con «En el año 3024, un historiador descubre una carta…».</dd>
+              <dt>Aplicación cotidiana <span class="src src-ext">Ampliación</span></dt>
+              <dd>Pedir «explícame este contrato en palabras simples» o «hazme una lista de compras para tres días».</dd>
+            </dl>
+            <div class="quick" data-quick="q-lenguaje"></div>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> 4. Generalización</h3>
+            <dl class="char-dl">
+              <dt>Definición <span class="src src-pdf">Presentación</span></dt>
+              <dd>Puede producir resultados que no están literalmente en los datos de entrenamiento, sino que combina elementos para formar algo nuevo.</dd>
+              <dt>Explicación sencilla <span class="src src-ext">Ampliación</span></dt>
+              <dd>El entrenamiento es el proceso en el que el modelo ajusta sus parámetros viendo muchísimos ejemplos. Después puede combinar lo aprendido, como una cocinera que conoce muchos platos y sabores y se anima a inventar una combinación nueva. Generalizar bien no garantiza acertar: también puede generalizar mal.</dd>
+              <dt>Ejemplo práctico <span class="src src-ext">Ampliación</span></dt>
+              <dd>Pides «un perro astronauta pintando un mural». Esa imagen exacta probablemente no existía; el modelo combina «perro», «astronauta» y «mural».</dd>
+              <dt>Aplicación cotidiana <span class="src src-ext">Ampliación</span></dt>
+              <dd>Pedir un menú para una fiesta con tres restricciones alimentarias que no aparece escrito así en ningún libro.</dd>
+            </dl>
+            <div class="quick" data-quick="q-generalizacion"></div>
+          </article>
+
+          <div class="block warning">
+            <h3><span class="chip chip-warn">Cuidado</span> Lo que estas características no garantizan <span class="src src-ext">Ampliación</span></h3>
+            <ul>
+              <li><strong>No implican creatividad humana.</strong> El resultado simula creatividad, pero no hay intención ni experiencia vivida detrás.</li>
+              <li><strong>No implican comprensión perfecta.</strong> El modelo puede malinterpretar una petición o seguir un patrón sin entender de qué se trata.</li>
+              <li><strong>No implican exactitud factual.</strong> Puede sonar seguro y estar equivocado. En la sección 6 verás cómo detectarlo.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ========== 4. APLICACIONES ========== -->
+        <section id="s4" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 4 de 9</p>
+            <h2 id="h-s4" tabindex="-1">Aplicaciones de la IA generativa</h2>
+            <p class="lead">La presentación agrupa los usos actuales en cinco categorías. Abre cada una para ver un caso, una tarea real, la herramienta que podrías usar y sus precauciones.</p>
+          </header>
+
+          <details class="usecase" open>
+            <summary>Comunicación</summary>
+            <div class="usecase-body">
+              <p><span class="src src-pdf">Presentación</span> Redacción automática de textos, resúmenes, traducción y chatbots.</p>
+              <dl>
+                <dt>Ejemplo de tarea real</dt><dd>Resumir en cinco puntos el acta de una reunión de tres páginas y preparar un borrador de correo para quienes no asistieron.</dd>
+                <dt>Herramienta</dt><dd>Asistentes de texto (ChatGPT, Claude, Gemini, Copilot).</dd>
+                <dt>Ventajas</dt><dd>Ahorra tiempo en borradores y permite adaptar el tono al destinatario.</dd>
+                <dt>Limitaciones y precauciones</dt><dd>Puede omitir o cambiar detalles. Una traducción puede perder matices. No pegues información confidencial.</dd>
+              </dl>
+            </div>
+          </details>
+
+          <details class="usecase">
+            <summary>Diseño e imagen</summary>
+            <div class="usecase-body">
+              <p><span class="src src-pdf">Presentación</span> Creación de ilustraciones, logotipos, renders e imágenes desde descripciones.</p>
+              <dl>
+                <dt>Ejemplo de tarea real</dt><dd>Obtener una ilustración para el afiche de una feria de barrio a partir de una descripción escrita.</dd>
+                <dt>Herramienta</dt><dd>Generadores de imágenes (Midjourney, Stable Diffusion, DALL-E y sus reemplazos actuales).</dd>
+                <dt>Ventajas</dt><dd>Permite explorar muchas ideas visuales en poco tiempo.</dd>
+                <dt>Limitaciones y precauciones</dt><dd>Los textos dentro de la imagen pueden salir con errores. Revisa los derechos de uso y posibles estereotipos.</dd>
+              </dl>
+            </div>
+          </details>
+
+          <details class="usecase">
+            <summary>Educación</summary>
+            <div class="usecase-body">
+              <p><span class="src src-pdf">Presentación</span> Generación de actividades, retroalimentación automática y explicaciones personalizadas.</p>
+              <dl>
+                <dt>Ejemplo de tarea real</dt><dd>Crear cinco ejercicios de fracciones con distintos niveles de dificultad y una pista para cada uno.</dd>
+                <dt>Herramienta</dt><dd>Asistentes de texto.</dd>
+                <dt>Ventajas</dt><dd>Permite adaptar explicaciones al ritmo y al nivel de cada persona.</dd>
+                <dt>Limitaciones y precauciones</dt><dd>Puede dar una explicación equivocada con mucha seguridad. Un docente debe revisarla. Copiar sin entender no es aprender.</dd>
+              </dl>
+            </div>
+          </details>
+
+          <details class="usecase">
+            <summary>Entretenimiento</summary>
+            <div class="usecase-body">
+              <p><span class="src src-pdf">Presentación</span> Producción de guiones, música, personajes y mundos virtuales.</p>
+              <dl>
+                <dt>Ejemplo de tarea real</dt><dd>Hacer un boceto de guion para un cortometraje escolar y una melodía de fondo.</dd>
+                <dt>Herramienta</dt><dd>Asistentes de texto, y herramientas de música y audio (Suno AI, AIVA).</dd>
+                <dt>Ventajas</dt><dd>Permite crear prototipos rápidos antes de invertir tiempo en una versión final.</dd>
+                <dt>Limitaciones y precauciones</dt><dd>La autoría y los derechos siguen en debate. Existe riesgo de suplantar voces o personajes de otras personas.</dd>
+              </dl>
+            </div>
+          </details>
+
+          <details class="usecase">
+            <summary>Programación</summary>
+            <div class="usecase-body">
+              <p><span class="src src-pdf">Presentación</span> Asistentes que generan código a partir de instrucciones en lenguaje natural.</p>
+              <dl>
+                <dt>Ejemplo de tarea real</dt><dd>Pedir una función que valide un formulario y que explique cada paso.</dd>
+                <dt>Herramienta</dt><dd>Asistentes de código (GitHub Copilot y similares).</dd>
+                <dt>Ventajas</dt><dd>Acelera tareas repetitivas y ayuda a aprender cómo se resuelve un problema.</dd>
+                <dt>Limitaciones y precauciones</dt><dd>El código puede tener errores o fallos de seguridad. Pruébalo y entiéndelo antes de usarlo. No pegues claves ni datos privados.</dd>
+              </dl>
+            </div>
+          </details>
+          <p class="muted">Los ejemplos de tareas, las ventajas y las precauciones son una ampliación didáctica; las descripciones de cada categoría vienen de la presentación.</p>
+        </section>
+
+        <!-- ========== 5. HERRAMIENTAS ========== -->
+        <section id="s5" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 5 de 9</p>
+            <h2 id="h-s5" tabindex="-1">Herramientas de IA generativa</h2>
+            <p class="lead">La presentación las describe como soluciones que convierten ideas en contenidos, desarrolladas por empresas tecnológicas y aplicadas en entornos creativos, educativos, profesionales e industriales.</p>
+          </header>
+
+          <div class="block warning">
+            <h3><span class="chip chip-warn">Importante</span> Las herramientas cambian rápido</h3>
+            <p>La presentación nombra herramientas de un momento determinado. Esta página revisó su situación en octubre de 2026 y encontró que algunas ya no están disponibles o cambiaron de nombre; esas tarjetas tienen una nota de vigencia. No se indican precios ni planes gratuitos porque cambian con frecuencia: confirma siempre en el sitio oficial.</p>
+          </div>
+
+          <h3>Generación de texto</h3>
+          <ul class="cards">
+            <li class="tool"><h4>ChatGPT</h4><p class="tool-meta"><span class="tag">Texto</span> OpenAI</p><p>Asistente conversacional para redactar, resumir, explicar y reformular textos.</p></li>
+            <li class="tool"><h4>Claude</h4><p class="tool-meta"><span class="tag">Texto</span> Anthropic</p><p>Asistente conversacional para redactar, analizar documentos y explicar temas.</p></li>
+            <li class="tool"><h4>Gemini</h4><p class="tool-meta"><span class="tag">Texto</span> Google</p><p>Asistente de Google que trabaja con texto y otros formatos.</p></li>
+            <li class="tool"><h4>Copilot</h4><p class="tool-meta"><span class="tag">Texto</span> Microsoft</p><p>Asistente de Microsoft. No es lo mismo que GitHub Copilot, que ayuda a programar.</p></li>
+          </ul>
+
+          <h3>Generación de imágenes</h3>
+          <ul class="cards">
+            <li class="tool"><h4>DALL-E</h4><p class="tool-meta"><span class="tag">Imágenes</span> OpenAI</p><p>Generador de imágenes a partir de descripciones escritas.</p><p class="vigencia"><strong>Vigencia:</strong> según reportes consultados en octubre de 2026, OpenAI retiró DALL-E 2 y 3 de su API el 12 de mayo de 2026 y la generación de imágenes pasó a ChatGPT Images.</p></li>
+            <li class="tool"><h4>Midjourney</h4><p class="tool-meta"><span class="tag">Imágenes</span></p><p>Generador de imágenes con enfoque artístico a partir de descripciones.</p></li>
+            <li class="tool"><h4>Stable Diffusion</h4><p class="tool-meta"><span class="tag">Imágenes</span></p><p>Familia de modelos de generación de imágenes que se usa a través de distintas aplicaciones.</p></li>
+          </ul>
+
+          <h3>Generación de música y audio</h3>
+          <ul class="cards">
+            <li class="tool"><h4>Suno AI</h4><p class="tool-meta"><span class="tag">Música y audio</span></p><p>Crea canciones a partir de una descripción escrita.</p></li>
+            <li class="tool"><h4>AIVA</h4><p class="tool-meta"><span class="tag">Música y audio</span></p><p>Compone música con ayuda de IA para proyectos como videos o juegos.</p></li>
+            <li class="tool"><h4>Voicemod</h4><p class="tool-meta"><span class="tag">Música y audio</span></p><p>Transforma y modifica la voz con efectos. Úsala con cuidado para no suplantar a nadie.</p></li>
+          </ul>
+
+          <h3>Generación de video</h3>
+          <ul class="cards">
+            <li class="tool"><h4>Sora</h4><p class="tool-meta"><span class="tag">Video</span> OpenAI</p><p>Modelo para crear video a partir de texto.</p><p class="vigencia"><strong>Vigencia:</strong> OpenAI cerró la app de Sora el 26 de abril de 2026 y su API el 24 de septiembre de 2026. Ya no está disponible.</p></li>
+            <li class="tool"><h4>Runway Gen-2</h4><p class="tool-meta"><span class="tag">Video</span> Runway</p><p>Modelo de video de Runway que genera clips a partir de texto o imágenes.</p><p class="vigencia"><strong>Vigencia:</strong> Gen-2 es un modelo anterior; Runway ofrece modelos posteriores, como Gen-4.</p></li>
+            <li class="tool"><h4>Pika</h4><p class="tool-meta"><span class="tag">Video</span> Pika Labs</p><p>Herramienta para crear clips cortos de video desde texto o imágenes.</p><p class="vigencia"><strong>Vigencia:</strong> ha lanzado versiones posteriores; revisa cuál está disponible.</p></li>
+          </ul>
+
+          <h3>Asistentes de código</h3>
+          <ul class="cards">
+            <li class="tool"><h4>GitHub Copilot</h4><p class="tool-meta"><span class="tag">Código</span> GitHub</p><p>Asistente que sugiere código y responde preguntas mientras programas.</p></li>
+            <li class="tool"><h4>CodeWhisperer</h4><p class="tool-meta"><span class="tag">Código</span> Amazon</p><p>Asistente de código de Amazon.</p><p class="vigencia"><strong>Vigencia:</strong> pasó a formar parte de Amazon Q Developer en 2024. AWS anunció que los plugins de Q Developer para editores dejarán de tener soporte el 30 de abril de 2027 y recomienda Kiro.</p></li>
+            <li class="tool"><h4>Codey</h4><p class="tool-meta"><span class="tag">Código</span> Google</p><p>Modelos de Google especializados en código.</p><p class="vigencia"><strong>Vigencia:</strong> Google migró estos servicios a modelos Gemini, por ejemplo en Gemini Code Assist.</p></li>
+          </ul>
+
+          <div class="block activity">
+            <h3><span class="chip chip-activity">Actividad</span> Elige la herramienta según la tarea</h3>
+            <p>Selecciona una tarea y mira qué categoría encaja y qué precaución tomar.</p>
+            <div class="field">
+              <label for="tarea">Tarea que necesito hacer</label>
+              <select id="tarea">
+                <option value="">Elige una tarea…</option>
+              </select>
+            </div>
+            <div id="tarea-out" class="result" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <!-- ========== 6. RIESGOS ========== -->
+        <section id="s6" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 6 de 9</p>
+            <h2 id="h-s6" tabindex="-1">Riesgos y uso responsable</h2>
+            <p class="lead">Los retos de la presentación son cuatro. Aquí se explican con ejemplos didácticos, junto con algunos riesgos que conviene conocer desde el primer día.</p>
+          </header>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Información falsa, plagio y suplantación <span class="src src-pdf">Presentación</span></h3>
+            <p>El contenido generado puede ser indistinguible del creado por humanos, lo que plantea riesgos como noticias falsas, plagio o suplantación.</p>
+            <p><strong>Ejemplo didáctico:</strong> recibes un audio que suena como tu tío y te pide una transferencia urgente. Esa voz podría haberse generado.</p>
+            <p><strong>Qué hacer:</strong> verifica por otro canal (una llamada a su número de siempre), busca la fuente original de una noticia y desconfía de lo que pide dinero o datos con urgencia.</p>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Respuestas incorrectas que parecen convincentes <span class="src src-ext">Ampliación</span></h3>
+            <p>Un modelo produce texto plausible a partir de patrones; no consulta una base de verdades. A veces inventa datos, títulos o citas con total seguridad. Esto se conoce como «alucinación».</p>
+            <p><strong>Ejemplo didáctico:</strong> pides tres libros sobre un tema y recibes tres títulos con autor y año. Dos existen; el tercero no.</p>
+            <p><strong>Qué hacer:</strong> comprueba nombres, fechas, cifras y citas en fuentes independientes. Pedirle a la misma IA que se confirme a sí misma no cuenta como verificación.</p>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Autoría y derechos sobre el contenido <span class="src src-pdf">Presentación</span></h3>
+            <p>La autoría y los derechos sobre lo generado por IA son aún objeto de debate legal.</p>
+            <p><strong>Ejemplo didáctico:</strong> quieres usar en un producto a la venta una imagen generada con IA. Si puedes hacerlo depende de los términos de la herramienta y de las leyes de tu país.</p>
+            <p><strong>Qué hacer:</strong> lee los términos de uso, indica cuándo usaste IA y consulta a una persona experta si el uso es comercial. Esto no es asesoría legal.</p>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Plagio y atribución <span class="src src-ext">Ampliación</span></h3>
+            <p>Un modelo puede producir fragmentos parecidos a textos existentes y casi nunca puede decir con certeza de dónde salió cada idea.</p>
+            <p><strong>Ejemplo didáctico:</strong> entregas como propio un texto generado en un curso que pide trabajo original.</p>
+            <p><strong>Qué hacer:</strong> sigue la política de tu curso u organización, reescribe con tus palabras lo que entiendas y cita las fuentes reales que consultaste.</p>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Sesgos y prejuicios <span class="src src-pdf">Presentación</span></h3>
+            <p>Los modelos pueden reproducir estereotipos o prejuicios presentes en los datos con los que fueron entrenados.</p>
+            <p><strong>Ejemplo didáctico:</strong> pides imágenes de «una persona líder» y casi todas muestran el mismo tipo de persona.</p>
+            <p><strong>Qué hacer:</strong> revisa si los resultados excluyen o simplifican grupos, pide variedad de forma explícita, compara varias respuestas y no uses la IA sola para decisiones que afecten a personas.</p>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Uso justo, inclusivo y transparente <span class="src src-pdf">Presentación</span></h3>
+            <p>Se requiere desarrollar criterios y marcos regulatorios que garanticen un uso justo, inclusivo y transparente.</p>
+            <p><strong>Ejemplo didáctico:</strong> una organización decide que todo documento preparado con apoyo de IA lo indique y que una persona lo revise antes de publicarlo.</p>
+            <p><strong>Qué hacer:</strong> conoce las reglas de tu escuela o trabajo, declara cuándo usaste IA y piensa si el resultado funciona para personas distintas a ti.</p>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Privacidad y datos personales <span class="src src-ext">Ampliación</span></h3>
+            <p>Lo que escribes en una herramienta puede salir de tu control. Tampoco es tuyo el derecho a compartir los datos de otras personas.</p>
+            <p><strong>Ejemplo didáctico:</strong> pegas la lista de un curso con nombres, notas y correos para «ordenarla».</p>
+            <p><strong>Qué hacer:</strong> usa datos ficticios o anonimizados, no compartas contraseñas ni documentos de identidad y revisa la política de privacidad de la herramienta.</p>
+          </article>
+
+          <article class="block theory">
+            <h3><span class="chip chip-theory">Teoría</span> Revisión humana antes de usar el resultado <span class="src src-ext">Ampliación</span></h3>
+            <p>Quien publica o entrega un resultado responde por él. La IA propone y una persona decide.</p>
+            <p><strong>Ejemplo didáctico:</strong> un borrador de correo tiene un compromiso con una fecha equivocada. Quien lo envía sin leerlo es quien responde.</p>
+            <p><strong>Qué hacer:</strong> lee todo, comprueba los hechos, prueba el código y adapta el texto a quien lo va a recibir.</p>
+          </article>
+
+          <div class="block example">
+            <h3><span class="chip chip-example">Resumen</span> Cuatro preguntas antes de usar un resultado <span class="src src-ext">Ampliación</span></h3>
+            <ol>
+              <li><strong>¿Es cierto?</strong> Verifiqué datos, fechas, cifras y fuentes.</li>
+              <li><strong>¿Es justo?</strong> Revisé si hay estereotipos o si deja a alguien fuera.</li>
+              <li><strong>¿Está permitido y bien atribuido?</strong> Respeté los términos de la herramienta y las reglas de mi organización, y declaré el uso de IA cuando corresponde.</li>
+              <li><strong>¿Es seguro compartirlo?</strong> No incluye datos personales ni información confidencial.</li>
+            </ol>
+          </div>
+
+          <div class="block activity">
+            <h3><span class="chip chip-activity">Actividad</span> Detective de riesgos</h3>
+            <p>Esta respuesta es <strong>ficticia</strong>, creada para practicar. Lee las frases y marca las que presenten un riesgo. Luego revisa tu análisis.</p>
+            <div id="detective"></div>
+          </div>
+        </section>
+
+        <!-- ========== 7. EJERCICIO ========== -->
+        <section id="s7" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 7 de 9</p>
+            <h2 id="h-s7" tabindex="-1">Del problema al resultado: aprende a trabajar con IA generativa</h2>
+            <p class="lead">Un ejercicio guiado de unos 60 minutos, sin programación, que puedes hacer solo o en pareja.</p>
+          </header>
+
+          <div class="block activity">
+            <h3><span class="chip chip-activity">Actividad</span> El reto</h3>
+            <p>Vas a crear con ayuda de una IA generativa una <strong>guía de una página con recomendaciones para comprobar si lo que responde una IA es confiable</strong>. Tú eliges el público: compañeros de curso, familiares, un equipo de trabajo, vecinos.</p>
+            <p>El proceso importa más que el texto final: preparar buenas instrucciones, evaluar con ojo crítico y mejorar.</p>
+            <h4>Plan de tiempos</h4>
+            <ol class="timeline" id="linea-tiempo">
+              <li data-minutes="8"><span>Etapa 1</span> Comprender el reto <b>8 min</b></li>
+              <li data-minutes="10"><span>Etapa 2</span> Preparar instrucciones <b>10 min</b></li>
+              <li data-minutes="7"><span>Etapa 3</span> Primera generación <b>7 min</b></li>
+              <li data-minutes="15"><span>Etapa 4</span> Evaluación crítica <b>15 min</b></li>
+              <li data-minutes="12"><span>Etapa 5</span> Mejora iterativa <b>12 min</b></li>
+              <li data-minutes="8"><span>Etapa 6</span> Presentación <b>8 min</b></li>
+            </ol>
+            <p>Total planificado: <strong><span id="total-min">60</span> minutos</strong>.</p>
+          </div>
+
+          <div class="split">
+            <details class="usecase">
+              <summary>Cómo hacerlo en pareja</summary>
+              <div class="usecase-body">
+                <p>Las dos personas comparten un solo resultado y se reparten roles:</p>
+                <ul>
+                  <li><strong>Persona A, redactora de instrucciones:</strong> escribe el prompt en las etapas 2 y 3.</li>
+                  <li><strong>Persona B, revisora crítica:</strong> lidera la evaluación en la etapa 4.</li>
+                  <li>En la etapa 5 cambian de rol: B escribe la nueva versión de las instrucciones y A revisa.</li>
+                  <li>En la etapa 6 cada una presenta una parte.</li>
+                </ul>
+              </div>
+            </details>
+            <details class="usecase">
+              <summary>Si no quieres crear una cuenta</summary>
+              <div class="usecase-body">
+                <p>Puedes hacer el ejercicio sin crear una cuenta nueva y sin compartir datos personales:</p>
+                <ul>
+                  <li>Usa una herramienta a la que ya tengas acceso, si lo prefieres. Esta página no la conecta ni envía nada.</li>
+                  <li>O usa el <strong>texto de práctica</strong> de la etapa 3 y haz las etapas 4 y 5 con él. En la etapa 5 reescribirás las instrucciones y explicarás qué cambiarías en el resultado.</li>
+                </ul>
+                <p><strong>En cualquier caso:</strong> no escribas en una herramienta tu nombre, documento, dirección, contraseñas ni datos de otras personas. Usa ejemplos ficticios.</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Etapa 1 -->
+          <article class="stage block activity" data-minutes="8">
+            <h3><span class="stage-n">Etapa 1</span> Comprensión del reto <span class="mins">8 min</span></h3>
+            <dl class="stage-dl">
+              <dt>Objetivo</dt><dd>Definir para quién es la guía y qué debe lograr.</dd>
+              <dt>Instrucciones</dt>
+              <dd><ol>
+                <li>Elige el público de tu guía.</li>
+                <li>Escribe el problema en una frase: «[Público] necesita saber cómo comprobar si lo que dice una IA es confiable».</li>
+                <li>Describe el resultado esperado: formato y extensión.</li>
+                <li>Define tres criterios para juzgar la calidad (por ejemplo: clara, exacta, adecuada al público).</li>
+              </ol></dd>
+              <dt>Ejemplo</dt><dd>Público: compañeros de primer semestre. Resultado: una guía de una página con cinco recomendaciones, cada una con un ejemplo breve. Criterios: clara, sin datos inventados, tono cercano.</dd>
+              <dt>Resultado esperado</dt><dd>Una ficha de cuatro líneas con público, problema, resultado y tres criterios.</dd>
+              <dt>Criterio para completarla</dt><dd>Puedes explicar en 30 segundos para quién es la guía y qué debe lograr.</dd>
+            </dl>
+            <label class="done"><input type="checkbox" class="stage-done"> Etapa completada: cumplí el criterio</label>
+          </article>
+
+          <!-- Etapa 2 -->
+          <article class="stage block activity" data-minutes="10">
+            <h3><span class="stage-n">Etapa 2</span> Preparación de instrucciones <span class="mins">10 min</span></h3>
+            <dl class="stage-dl">
+              <dt>Objetivo</dt><dd>Escribir un prompt claro con cuatro partes: contexto, objetivo, restricciones y formato de respuesta.</dd>
+              <dt>Instrucciones</dt>
+              <dd><ol>
+                <li><strong>Contexto:</strong> quién eres, para quién es y qué situación hay.</li>
+                <li><strong>Objetivo:</strong> qué quieres que haga la IA, de forma concreta.</li>
+                <li><strong>Restricciones:</strong> extensión, tono, qué evitar (por ejemplo: «no inventes estadísticas»).</li>
+                <li><strong>Formato:</strong> cómo quieres recibir la respuesta (lista, tabla, título…).</li>
+                <li>Revisa que no incluya datos personales y copia el resultado a tu documento.</li>
+              </ol></dd>
+              <dt>Ejemplo</dt><dd>Este es un prompt de ejemplo para copiar y adaptar. Cámbialo según tu público y tus criterios.</dd>
+            </dl>
+            <pre id="ejemplo-prompt" class="prompt-example" tabindex="0"></pre>
+            <div class="actions">
+              <button type="button" class="btn btn-secondary" id="ejemplo-copiar">Copiar el ejemplo</button>
+              <span id="ejemplo-estado" class="status" role="status"></span>
+            </div>
+
+            <h4>Constructor de instrucciones</h4>
+            <p class="muted">Rellena las cuatro partes y se armará tu prompt. Todo ocurre en tu navegador; no se envía a ningún sitio.</p>
+            <div class="builder" id="builder">
+              <div class="field"><label for="pb-contexto">Contexto</label><textarea id="pb-contexto" rows="3" placeholder="Quién eres, para quién es y cuál es la situación"></textarea></div>
+              <div class="field"><label for="pb-objetivo">Objetivo</label><textarea id="pb-objetivo" rows="3" placeholder="Qué quieres que haga la IA"></textarea></div>
+              <div class="field"><label for="pb-restricciones">Restricciones</label><textarea id="pb-restricciones" rows="3" placeholder="Extensión, tono, qué evitar"></textarea></div>
+              <div class="field"><label for="pb-formato">Formato de respuesta</label><textarea id="pb-formato" rows="3" placeholder="Cómo quieres recibir la respuesta"></textarea></div>
+              <div class="field"><label for="pb-salida">Tu prompt</label><textarea id="pb-salida" rows="8" readonly></textarea></div>
+              <div class="actions">
+                <button type="button" class="btn btn-secondary" id="pb-ejemplo">Cargar el ejemplo</button>
+                <button type="button" class="btn btn-primary" id="pb-copiar">Copiar mi prompt</button>
+                <button type="button" class="btn btn-secondary" id="pb-limpiar">Limpiar</button>
+              </div>
+              <p id="pb-estado" class="status" role="status"></p>
+            </div>
+
+            <dl class="stage-dl">
+              <dt>Resultado esperado</dt><dd>Un prompt con las cuatro partes, adaptado a tu público.</dd>
+              <dt>Criterio para completarla</dt><dd>Las cuatro partes están completas y el prompt no contiene datos personales.</dd>
+            </dl>
+            <label class="done"><input type="checkbox" class="stage-done"> Etapa completada: cumplí el criterio</label>
+          </article>
+
+          <!-- Etapa 3 -->
+          <article class="stage block activity" data-minutes="7">
+            <h3><span class="stage-n">Etapa 3</span> Primera generación <span class="mins">7 min</span></h3>
+            <dl class="stage-dl">
+              <dt>Objetivo</dt><dd>Obtener una primera versión para evaluarla.</dd>
+              <dt>Instrucciones</dt>
+              <dd><ol>
+                <li>Pega tu prompt en la herramienta de IA que elegiste.</li>
+                <li>Copia la respuesta completa en un documento, sin corregirla todavía. Llámala «versión 1».</li>
+                <li>Si trabajas sin herramienta, usa el texto de práctica de abajo como tu versión 1.</li>
+              </ol></dd>
+              <dt>Ejemplo</dt><dd>Un texto de práctica ficticio, creado a propósito con imperfecciones. Úsalo si no quieres usar una herramienta.</dd>
+            </dl>
+            <details class="usecase">
+              <summary>Texto de práctica (ficticio)</summary>
+              <div class="usecase-body" id="respuesta-practica">
+                <p><strong>Guía rápida: cómo saber si lo que dice una IA es cierto</strong></p>
+                <ol>
+                  <li>Confía siempre en la IA cuando cita estadísticas, porque está entrenada con millones de datos.</li>
+                  <li>Si la IA menciona el nombre de un estudio, no necesitas buscarlo.</li>
+                  <li>Las personas mayores tienen más dificultad con la tecnología, por eso deben usar esta guía con ayuda de sus hijos.</li>
+                  <li>Compara la respuesta con al menos otra fuente confiable.</li>
+                  <li>Pega tu documento de identidad en el chat para que la IA personalice esta guía.</li>
+                </ol>
+              </div>
+            </details>
+            <dl class="stage-dl">
+              <dt>Resultado esperado</dt><dd>Una versión 1 completa y guardada, sin modificar.</dd>
+              <dt>Criterio para completarla</dt><dd>Tienes un texto de la guía listo para evaluar.</dd>
+            </dl>
+            <label class="done"><input type="checkbox" class="stage-done"> Etapa completada: cumplí el criterio</label>
+          </article>
+
+          <!-- Etapa 4 -->
+          <article class="stage block activity" data-minutes="15">
+            <h3><span class="stage-n">Etapa 4</span> Evaluación crítica <span class="mins">15 min</span></h3>
+            <dl class="stage-dl">
+              <dt>Objetivo</dt><dd>Detectar errores, información dudosa, omisiones, sesgos y problemas de calidad en la versión 1.</dd>
+              <dt>Instrucciones</dt>
+              <dd><ol>
+                <li>Lee la versión 1 completa, frase por frase.</li>
+                <li>Contesta las seis preguntas de la lista de revisión.</li>
+                <li>Anota al menos tres hallazgos en una tabla: qué frase, qué tipo de problema y qué harías.</li>
+                <li>Si trabajas en pareja, hacen la revisión por separado y luego comparan.</li>
+              </ol></dd>
+              <dt>Ejemplo</dt>
+              <dd>
+                <div class="table-wrap"><table>
+                  <caption class="sr-only">Ejemplo de tabla de hallazgos</caption>
+                  <thead><tr><th scope="col">Frase</th><th scope="col">Tipo de problema</th><th scope="col">Qué haría</th></tr></thead>
+                  <tbody><tr><td>«El 90 % de las personas…»</td><td>Dato sin fuente</td><td>Pedir la fuente o eliminar la cifra</td></tr></tbody>
+                </table></div>
+              </dd>
+            </dl>
+            <h4>Lista de revisión</h4>
+            <ol>
+              <li>¿Hay datos, cifras o fuentes que no puedo comprobar?</li>
+              <li>¿Hay afirmaciones absolutas («siempre», «nunca»)?</li>
+              <li>¿Hay estereotipos o generalizaciones sobre grupos de personas?</li>
+              <li>¿Falta algún tema importante para mi público?</li>
+              <li>¿Pide o expone datos personales?</li>
+              <li>¿El lenguaje y el tono se ajustan a mi público?</li>
+            </ol>
+            <details class="usecase">
+              <summary>Pistas de revisión (ábrelas después de intentarlo)</summary>
+              <div class="usecase-body">
+                <p>Si trabajas con el texto de práctica, pregúntate qué pasa con las afirmaciones que empiezan con «siempre», con quién se asume que tiene dificultades con la tecnología y con lo que pide la última recomendación. Tampoco olvides preguntarte qué falta.</p>
+              </div>
+            </details>
+            <dl class="stage-dl">
+              <dt>Resultado esperado</dt><dd>Una tabla con al menos tres hallazgos y una acción para cada uno.</dd>
+              <dt>Criterio para completarla</dt><dd>Cada hallazgo señala una frase concreta, el tipo de problema y qué harías.</dd>
+            </dl>
+            <label class="done"><input type="checkbox" class="stage-done"> Etapa completada: cumplí el criterio</label>
+          </article>
+
+          <!-- Etapa 5 -->
+          <article class="stage block activity" data-minutes="12">
+            <h3><span class="stage-n">Etapa 5</span> Mejora iterativa <span class="mins">12 min</span></h3>
+            <dl class="stage-dl">
+              <dt>Objetivo</dt><dd>Modificar las instrucciones para corregir lo que encontraste y generar una versión mejorada.</dd>
+              <dt>Instrucciones</dt>
+              <dd><ol>
+                <li>Para cada hallazgo, decide qué cambio de instrucciones podría evitarlo: una restricción nueva, un público más preciso, un formato distinto.</li>
+                <li>Escribe la versión 2 de tu prompt. Cambia solo lo necesario para poder comparar.</li>
+                <li>Genera la versión 2 (o, sin herramienta, describe cómo esperas que cambie el resultado).</li>
+                <li>Compara las versiones 1 y 2 y anota qué mejoró y qué no.</li>
+              </ol></dd>
+              <dt>Ejemplo</dt><dd>Si apareció una estadística sin fuente, puedes añadir: «No incluyas cifras si no puedes indicar una fuente verificable». Si el tono no sirve, puedes cambiar el público o dar un ejemplo del tono que quieres.</dd>
+              <dt>Resultado esperado</dt><dd>Prompt versión 2, versión 2 del resultado y una nota de cambios.</dd>
+              <dt>Criterio para completarla</dt><dd>La versión 2 resuelve al menos dos hallazgos, o puedes explicar por qué no.</dd>
+            </dl>
+            <p class="muted">Mejorar las instrucciones no garantiza un resultado sin errores. Revisa también la versión 2.</p>
+            <label class="done"><input type="checkbox" class="stage-done"> Etapa completada: cumplí el criterio</label>
+          </article>
+
+          <!-- Etapa 6 -->
+          <article class="stage block activity" data-minutes="8">
+            <h3><span class="stage-n">Etapa 6</span> Presentación del resultado <span class="mins">8 min</span></h3>
+            <dl class="stage-dl">
+              <dt>Objetivo</dt><dd>Explicar qué obtuviste, qué cambiaste y qué limitaciones encontraste.</dd>
+              <dt>Instrucciones</dt>
+              <dd><ol>
+                <li>Prepara una presentación de unos 5 minutos y deja 3 para preguntas.</li>
+                <li>Cuenta: qué pedí, qué recibí, qué problemas encontré, qué cambié y qué limitaciones quedan.</li>
+                <li>Declara que usaste IA y cómo revisaste el resultado.</li>
+              </ol></dd>
+              <dt>Ejemplo</dt><dd>«Pedí una guía para compañeros de primer semestre. La primera versión incluía una cifra sin fuente. Añadí una restricción sobre datos y la segunda mejoró. Aún debo verificar los ejemplos».</dd>
+              <dt>Resultado esperado</dt><dd>Una explicación breve y clara del proceso, no solo del texto final.</dd>
+              <dt>Criterio para completarla</dt><dd>Explicas qué obtuviste, qué cambiaste y al menos una limitación que sigue vigente.</dd>
+            </dl>
+            <label class="done"><input type="checkbox" class="stage-done"> Etapa completada: cumplí el criterio</label>
+          </article>
+
+          <div class="block eval" id="etapas-bloque">
+            <h3><span class="chip chip-eval">Avance</span> Tu avance en el ejercicio</h3>
+            <p id="etapas-resumen" role="status">Etapas completadas: 0 de 6 (0 de 60 minutos planificados).</p>
+          </div>
+        </section>
+
+        <!-- ========== 8. EVALUACIÓN ========== -->
+        <section id="s8" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 8 de 9</p>
+            <h2 id="h-s8" tabindex="-1">Evaluación del aprendizaje</h2>
+            <p class="lead">Ocho preguntas de selección múltiple. Después de cada respuesta verás una explicación. Al final puedes volver a intentarlo.</p>
+          </header>
+          <div class="block eval">
+            <div id="quiz"></div>
+          </div>
+        </section>
+
+        <!-- ========== 9. CIERRE ========== -->
+        <section id="s9" class="panel" hidden>
+          <header class="panel-head">
+            <p class="section-count">Sección 9 de 9</p>
+            <h2 id="h-s9" tabindex="-1">Cierre</h2>
+          </header>
+
+          <div class="block theory">
+            <h3><span class="chip chip-theory">Resumen</span> Lo que aprendiste</h3>
+            <ul>
+              <li>La IA generativa crea contenido nuevo a partir de patrones aprendidos de datos existentes, a diferencia de los modelos que clasifican o predicen.</li>
+              <li>Tiene cuatro características: creatividad algorítmica, aprendizaje profundo, interacción con lenguaje natural y generalización.</li>
+              <li>Se aplica en comunicación, diseño e imagen, educación, entretenimiento y programación.</li>
+              <li>Hay herramientas para texto, imágenes, música y audio, video y código. Cambian rápido: verifica siempre su disponibilidad.</li>
+              <li>Sus retos son la información falsa, el plagio y la suplantación, la autoría, los sesgos y la necesidad de un uso justo, inclusivo y transparente.</li>
+              <li>Un buen prompt incluye contexto, objetivo, restricciones y formato, y todo resultado necesita revisión humana.</li>
+            </ul>
+          </div>
+
+          <div class="block example">
+            <h3><span class="chip chip-example">Siguientes pasos</span> Cómo seguir practicando</h3>
+            <ul>
+              <li>Repite el ejercicio con otro público o con otro formato, como una tabla o un guion.</li>
+              <li>Prueba la misma tarea con dos herramientas distintas y compara lo que cada una hace bien y mal.</li>
+              <li>Cuando una IA te dé un dato, intenta comprobarlo en otra fuente antes de usarlo.</li>
+              <li>Guarda tus mejores prompts y anota qué cambió entre una versión y la siguiente.</li>
+              <li>Conoce las reglas de tu escuela o trabajo sobre el uso de IA.</li>
+            </ul>
+          </div>
+
+          <div class="block eval">
+            <h3><span class="chip chip-eval">Autoevaluación</span> ¿Alcanzaste los objetivos?</h3>
+            <p>Marca cada afirmación cuando puedas hacerlo con confianza.</p>
+            <ul class="checklist">
+              <li><label><input type="checkbox" class="obj"> Puedo explicar con mis palabras qué es la IA generativa.</label></li>
+              <li><label><input type="checkbox" class="obj"> Reconozco sus cuatro características principales.</label></li>
+              <li><label><input type="checkbox" class="obj"> Puedo dar ejemplos de aplicaciones en distintos sectores.</label></li>
+              <li><label><input type="checkbox" class="obj"> Sé elegir una herramienta según la tarea.</label></li>
+              <li><label><input type="checkbox" class="obj"> Puedo escribir instrucciones con contexto, objetivo, restricciones y formato.</label></li>
+              <li><label><input type="checkbox" class="obj"> Sé buscar errores, sesgos y riesgos en un resultado.</label></li>
+              <li><label><input type="checkbox" class="obj"> Reviso, verifico y declaro el uso de IA antes de compartir.</label></li>
+            </ul>
+            <p id="check-resumen" role="status">Has marcado 0 de 7 objetivos.</p>
+          </div>
+
+          <h3>Volver a una sección</h3>
+          <ul class="back-links">
+            <li><a href="#s1">1. Introducción</a></li>
+            <li><a href="#s2">2. ¿Qué es la IA generativa?</a></li>
+            <li><a href="#s3">3. Características principales</a></li>
+            <li><a href="#s4">4. Aplicaciones</a></li>
+            <li><a href="#s5">5. Herramientas</a></li>
+            <li><a href="#s6">6. Riesgos y uso responsable</a></li>
+            <li><a href="#s7">7. Ejercicio práctico</a></li>
+            <li><a href="#s8">8. Evaluación</a></li>
+          </ul>
+          <p><button type="button" class="btn btn-secondary" id="reiniciar">Reiniciar el recorrido</button></p>
+          <p class="muted">Basado en la presentación «IA Generativa» de Juan David Berrotéran, Kamilo Avendaño, Miguel Sarmiento, Daniel Motta y Keiner Quintana.</p>
+        </section>
+
+        <nav class="pager" aria-label="Navegación entre secciones">
+          <a id="pager-prev" class="btn btn-secondary" href="#s1" hidden></a>
+          <a id="pager-next" class="btn btn-primary" href="#s2"></a>
+        </nav>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
